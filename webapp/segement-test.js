@@ -5,7 +5,8 @@ analytics.track({
   anonymousId: 123,
   event: 'test',
   properties: {
-    key: 'val'
+    NDC_request: 
+    NDC_response:
   }
 });
 console.log('all done!')
