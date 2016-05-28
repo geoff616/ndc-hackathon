@@ -27,9 +27,9 @@ Meteor.startup(() => {
     // render the Signup Template
     this.render('Reports', {data: {}});
   });
-  Router.route('/admin/policies', function () {
+  Router.route('/admin/coming-soon', function () {
     // render the Signup Template
-    this.render('Policies', {data: {}});
+    this.render('ComingSoon', {data: {}});
   });
   // API ROUTES
   if (Meteor.isServer) {
