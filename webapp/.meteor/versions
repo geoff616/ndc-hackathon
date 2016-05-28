@@ -62,6 +62,7 @@ modules-runtime@0.6.3
 mongo@1.1.7
 mongo-id@1.0.4
 mrt:bootstrap-3@0.3.8
+mrt:jquery-ui@1.9.2
 npm-mongo@1.4.43
 oauth@1.1.10
 oauth2@1.1.9

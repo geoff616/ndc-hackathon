@@ -11,26 +11,6 @@ Meteor.startup(() => {
     this.render('Home', {data: {title: 'My Title'}});
   });
 
-  Router.route('/signup', function () {
-    // render the Signup Template
-    this.render('Signup', {data: {}});
-  });
-
-  Router.route('/signup/user', function () {
-    // render the Signup Template for new users
-    this.render('Signup', {data: {section: 'user'}});
-  });
-
-   Router.route('/signup/company', function () {
-    // render the Signup Template for new companies
-    this.render('Signup', {data: {section: 'company'}});
-  });
-
-  Router.route('/signup/merchant', function () {
-    // render the Signup Template for new merchants
-    this.render('Signup', {data: {section: 'merchant'}});
-  });
-
   Router.route('/admin', function () {
     // render the admin home page
     this.render('Admin', {data: {}});
