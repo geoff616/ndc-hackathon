@@ -1,2 +1,3 @@
 /webapp/.meteor/local
 /webapp/.meteor/meteorite
+/webapp/node_modules

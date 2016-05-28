@@ -1,10 +1,55 @@
 
 Meteor.startup(() => {
-  Router.route('/restful', {where: 'server'})
-    .get(function () {
-      this.response.end('get request\n');
-    })
+  // UI ROUTES
+  Router.route('/', function () {
+    // render the Home template with a custom data context
+    this.render('Home', {data: {title: 'My Title'}});
+  });
+
+  Router.route('/signup', function () {
+    // render the Signup Template
+    this.render('Signup', {data: {}});
+  });
+
+  Router.route('/signup/user', function () {
+    // render the Signup Template for new users
+    this.render('Signup', {data: {section: 'user'}});
+  });
+
+   Router.route('/signup/company', function () {
+    // render the Signup Template for new companies
+    this.render('Signup', {data: {section: 'company'}});
+  });
+
+  Router.route('/signup/merchant', function () {
+    // render the Signup Template for new merchants
+    this.render('Signup', {data: {section: 'merchant'}});
+  });
+
+  Router.route('/admin', function () {
+    // render the admin home page
+    this.render('Admin', {data: {}});
+  });
+
+  Router.route('/admin/users', function () {
+    // render the Signup Template
+    this.render('Admin', {data: {section: 'users'}});
+  });
+
+  Router.route('/admin/merchants', function () {
+    // render the Signup Template
+    this.render('Admin', {data: {section: 'merchants'}});
+  });
+
+  Router.route('/admin/reports', function () {
+    // render the Signup Template
+    this.render('Admin', {data: {section: 'reports'}});
+  });
+
+  // API ROUTES
+  Router.route('/api/transaction', {where: 'server'})
     .post(function () {
-      this.response.end('post request\n');
+      // save transaction to DB
+      this.response.end('I should save some data!\n');
     });
 });
