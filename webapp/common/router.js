@@ -10,25 +10,23 @@ Meteor.startup(() => {
     // render the Home template with a custom data context
     this.render('Home', {data: {title: 'My Title'}});
   });
+  Router.route('/signup', function () {
+    // render the Home template with a custom data context
+    this.render('Signup', {data: {}});
+  });
 
   Router.route('/admin', function () {
     // render the admin home page
     this.render('Admin', {data: {}});
   });
 
-  Router.route('/admin/users', function () {
-    // render the Signup Template
-    this.render('Admin', {data: {section: 'users'}});
-  });
-
-  Router.route('/admin/merchants', function () {
-    // render the Signup Template
-    this.render('Admin', {data: {section: 'merchants'}});
-  });
-
   Router.route('/admin/reports', function () {
     // render the Signup Template
-    this.render('Admin', {data: {section: 'reports'}});
+    this.render('Reports', {data: {}});
+  });
+  Router.route('/admin/policies', function () {
+    // render the Signup Template
+    this.render('Policies', {data: {}});
   });
   // API ROUTES
   Router.route('/api/transaction', {where: 'server'})
