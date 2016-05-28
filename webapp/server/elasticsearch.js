@@ -89,8 +89,7 @@ function xmlToObj(string) {
 function mapIncomingDocument(doc) {
     doc.rq = xmlToObj(doc.rq);
     doc.rs = xmlToObj(doc.rs); 
-    console.log(rs);
-    return rs;
+    return doc;
 }
 
 

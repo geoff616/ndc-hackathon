@@ -9,9 +9,9 @@ fs.readFile(path.join(__dirname, 'fakeData/3-OrdercreateRS.xml'), 'utf8', functi
     if (err) throw err;
     analytics.track({
       anonymousId: 2345,
-      event: 'stuff',
+      event: 'stuff2',
       properties: {
-        NDC_request: rs,
+        NDC_request: 'rand' + rs,
         NDC_response: rq
       }
     });
