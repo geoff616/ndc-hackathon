@@ -1,9 +1,8 @@
-//
-//if (Meteor.isServer) {
-//  // only import this on the server!
-//  import { indexDocument } from './indexToES';
-//}
 
+if (Meteor.isServer) {
+  // only import this on the server!
+  var elastic = require('../server/elasticsearch');
+}
 
 Meteor.startup(() => {
   // UI ROUTES
@@ -51,4 +50,14 @@ Meteor.startup(() => {
     // render the Signup Template
     this.render('Admin', {data: {section: 'reports'}});
   });
+  // API ROUTES
+  Router.route('/api/transaction', {where: 'server'})
+   .post(function (transaction) {
+    var data = transaction.body
+    var reqContext = this;
+    // NOTE: no error handling :/
+    elastic.addDocument(data).then(function (result) { reqContext.response.end('gotz your data\n'); });
+   });
 });
+
+

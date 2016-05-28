@@ -7,7 +7,8 @@ var elasticClient = new elasticsearch.Client({
     log: 'info'
 });
 
-var indexName = 'testindex2';
+var indexName = 'transactions';
+var dataType = 'transaction'
 
 /**
 * Delete an existing index
@@ -38,37 +39,27 @@ function indexExists() {
     });
 }
 
+// TODO: figure out the data model
 function initMapping() {  
     return elasticClient.indices.putMapping({
         index: indexName,
-        type: "document",
+        type: dataType,
         body: {
             properties: {
-                title: { type: "string" },
-                content: { type: "string" },
-                suggest: {
-                    type: "completion",
-                    analyzer: "simple",
-                    search_analyzer: "simple",
-                    payloads: true
-                }
+                rq: { type: "string" },
+                rs: { type: "string" },
+                _meta: {type: "object"}
             }
         }
     });
 }
-function addDocument(document) {  
+
+// TODO: map imcoming document to data model
+function addDocument(documentToIndex) {  
     return elasticClient.index({
         index: indexName,
-        type: "document",
-        body: {
-            title: document.title,
-            content: document.content,
-            suggest: {
-                input: document.title.split(" "),
-                output: document.title,
-                payload: document.metadata || {}
-            }
-        }
+        type: dataType,
+        body: documentToIndex
     });
 }
 exports.addDocument = addDocument;
