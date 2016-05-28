@@ -1,3 +1,9 @@
+//
+//if (Meteor.isServer) {
+//  // only import this on the server!
+//  import { indexDocument } from './indexToES';
+//}
+
 
 Meteor.startup(() => {
   // UI ROUTES
@@ -45,11 +51,4 @@ Meteor.startup(() => {
     // render the Signup Template
     this.render('Admin', {data: {section: 'reports'}});
   });
-
-  // API ROUTES
-  Router.route('/api/transaction', {where: 'server'})
-    .post(function () {
-      // save transaction to DB
-      this.response.end('I should save some data!\n');
-    });
 });
