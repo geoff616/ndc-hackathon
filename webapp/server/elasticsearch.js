@@ -1,6 +1,9 @@
 // example from: https://blog.raananweber.com/2015/11/24/simple-autocomplete-with-elasticsearch-and-node-js/
 
 var elasticsearch = require('elasticsearch');
+var xml2js = new require('xml2js').Parser({
+    explicitArray: false
+});
 
 var elasticClient = new elasticsearch.Client({  
     host: '139.59.140.17:9200',
@@ -71,12 +74,29 @@ function initMapping() {
     });
 }
 
-// TODO: map imcoming document to data model
+function xmlToObj(string) {
+    return xml2js.parseString(res.body, function (err, data) {
+        if (err || !data) {
+            err = err || new Error('Empty Response');
+            return err
+        } else {
+            return data
+        }
+    });
+}
+
+function mapIncomingDocument(doc) {
+    doc.rq = xmlToObj(doc.rq);
+    doc.rs = xmlToObj(doc.rs); 
+    return rs;
+}
+
+
 function addDocument(documentToIndex) {  
     return elasticClient.index({
         index: indexName,
         type: dataType,
-        body: documentToIndex
+        body: mapIncomingDocument(documentToIndex)
     });
 }
 exports.addDocument = addDocument;
