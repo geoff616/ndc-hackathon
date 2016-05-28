@@ -1,0 +1,22 @@
+{
+  "name": "ndc-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "segement-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoff616/ndc-hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geoff616/ndc-hackathon/issues"
+  },
+  "homepage": "https://github.com/geoff616/ndc-hackathon#readme",
+  "dependencies": {
+    "analytics-node": "^2.1.0"
+  }
+}

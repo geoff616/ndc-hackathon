@@ -1,9 +1,6 @@
 // example from: https://blog.raananweber.com/2015/11/24/simple-autocomplete-with-elasticsearch-and-node-js/
 
 var elasticsearch = require('elasticsearch');
-var xml2js = new require('xml2js').Parser({
-    explicitArray: false
-});
 
 var elasticClient = new elasticsearch.Client({  
     host: '139.59.140.17:9200',
@@ -61,7 +58,7 @@ function initMapping() {
             originalTimestamp: { type: "date" },
             projectId: { type: "string" },
             properties: { 
-                // TODO: FILL THIS IN!!!!
+                // todo!
             },
             receivedAt: { type: "date" },
             sentAt: { type: "date" },
@@ -75,24 +72,29 @@ function initMapping() {
 }
 
 function xmlToObj(string) {
-    return xml2js.parseString(res.body, function (err, data) {
-        if (err || !data) {
-            err = err || new Error('Empty Response');
-            return err
-        } else {
-            return data
-        }
+    var xml2js = new require('xml2js').Parser({
+    explicitArray: false
     });
+     return xml2js.parseString(string, function (err, data) {
+         if (err || !data) {
+             err = err || new Error('Empty Response');
+             return err
+         } else {
+             return data
+         }
+     });
 }
 
 function mapIncomingDocument(doc) {
     doc.rq = xmlToObj(doc.rq);
     doc.rs = xmlToObj(doc.rs); 
+    console.log(rs);
     return rs;
 }
 
 
 function addDocument(documentToIndex) {  
+    console.log('adding a document')
     return elasticClient.index({
         index: indexName,
         type: dataType,
