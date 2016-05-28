@@ -6,14 +6,19 @@ if (Meteor.isServer) {
 
 Meteor.startup(() => {
   // UI ROUTES
+
+  if(this.userId) {
+    Router.route('/', function () {
+    // render the thank you page 
+    this.render('ThankYou', {data: {}});
+  });
+  } else {
   Router.route('/', function () {
-    // render the Home template with a custom data context
-    this.render('Home', {data: {title: 'My Title'}});
+    // render the Home template 
+    this.render('Home', {data: {}});
   });
-  Router.route('/signup', function () {
-    // render the Home template with a custom data context
-    this.render('Signup', {data: {}});
-  });
+  }
+  
 
   Router.route('/admin', function () {
     // render the admin home page

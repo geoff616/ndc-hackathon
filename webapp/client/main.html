@@ -126,7 +126,7 @@
                 <br>  
                 <br>
                   <div class="col-lg-12 text-center">
-                      <h2>Signup</h2>
+                      <h2>I am cool cat, but also a:</h2>
                       <hr class="star-light">
                   </div>
               </div>
@@ -178,7 +178,6 @@
                       <h2>Get in touch</h2>
                       <hr class="star-primary">
                       <p>Tell us how NDCRC can help make your life simpler!</p>
-                      <h4>TODO: CONFIRM THIS FORM WORKS ON THE METEOR SERVER</h4>
                   </div>
               </div>
               <div class="row">
@@ -302,23 +301,9 @@
                   <div class="row">
                       <div class="col-lg-8 col-lg-offset-2">
                           <div class="modal-body">
-                              <h2>Business Travel Account</h2>
+                              <h2>Create Your Business Travel Account</h2>
                               <hr class="star-primary">
-                              <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                              <ul class="list-inline item-details">
-                                  <li>Client:
-                                      <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                      </strong>
-                                  </li>
-                                  <li>Date:
-                                      <strong><a href="http://startbootstrap.com">April 2014</a>
-                                      </strong>
-                                  </li>
-                                  <li>Service:
-                                      <strong><a href="http://startbootstrap.com">Web Development</a>
-                                      </strong>
-                                  </li>
-                              </ul>
+                              <p>Sign in with LinkedIn to start your <h4>#nomorereceipts</h4> revolution: {{> loginButtons}}</p>
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                           </div>
                       </div>
@@ -338,23 +323,27 @@
                   <div class="row">
                       <div class="col-lg-8 col-lg-offset-2">
                           <div class="modal-body">
-                              <h2>Company Account</h2>
+                              <h2>Create Your Company's Account</h2>
                               <hr class="star-primary">
-                              <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                              <ul class="list-inline item-details">
-                                  <li>Client:
-                                      <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                      </strong>
-                                  </li>
-                                  <li>Date:
-                                      <strong><a href="http://startbootstrap.com">April 2014</a>
-                                      </strong>
-                                  </li>
-                                  <li>Service:
-                                      <strong><a href="http://startbootstrap.com">Web Development</a>
-                                      </strong>
-                                  </li>
-                              </ul>
+                              <img src="http://i.stack.imgur.com/tM18j.gif" alt="alt text">
+                              <p>We're not quite ready for you yet, but please leave your email and we'll send you a nice note as soon as things are up and running!</p>
+                               <form name="sentMessage2" id="contactForm2" novalidate>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <label>Email Address</label>
+                                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div id="success"></div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12">
+                                        <button type="submit" class="btn btn-success btn-lg" onclick="getData()">Submit</button>
+                                    </div>
+                                </div>
+                              </form>
+
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                           </div>
                       </div>
