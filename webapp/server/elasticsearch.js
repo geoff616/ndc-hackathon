@@ -10,6 +10,7 @@ var elasticClient = new elasticsearch.Client({
 var indexName = 'transactions';
 var dataType = 'transaction'
 
+
 /**
 * Delete an existing index
 */
