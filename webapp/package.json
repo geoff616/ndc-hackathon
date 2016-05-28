@@ -5,6 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "analytics-node": "^2.1.0",
     "elasticsearch": "11.0.1",
     "meteor-node-stubs": "^0.2.3"
   }

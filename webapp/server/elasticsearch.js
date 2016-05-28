@@ -44,13 +44,30 @@ function initMapping() {
     return elasticClient.indices.putMapping({
         index: indexName,
         type: dataType,
-        body: {
-            properties: {
-                rq: { type: "string" },
-                rs: { type: "string" },
-                _meta: {type: "object"}
-            }
+        properties: {
+            anonymousId: { type: "string" },
+            channel: { type: "string" },
+            context: { 
+                library: { 
+                    name: { type: "string" },
+                    version: { type: "string" }
+                } 
+            },
+            event: { type: "string" },
+            messageId: { type: "string" },
+            originalTimestamp: { type: "date" },
+            projectId: { type: "string" },
+            properties: { 
+                // TODO: FILL THIS IN!!!!
+            },
+            receivedAt: { type: "date" },
+            sentAt: { type: "date" },
+            timestamp: { type: "date" },
+            type: { type: "string" },
+            version: {type: "integer"},
+            writeKey: { type: "string" }
         }
+        
     });
 }
 

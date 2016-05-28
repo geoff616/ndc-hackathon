@@ -54,6 +54,8 @@ Meteor.startup(() => {
   Router.route('/api/transaction', {where: 'server'})
    .post(function (transaction) {
     var data = transaction.body
+    console.log('just got this data!');
+    console.log(data);
     var reqContext = this;
     // NOTE: no error handling :/
     elastic.addDocument(data).then(function (result) { reqContext.response.end('gotz your data\n'); });
