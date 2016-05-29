@@ -326,29 +326,45 @@
                   <div class="row">
                       <div class="col-lg-8 col-lg-offset-2">
                           <div class="modal-body">
-                              <h2>Create Your Company's Account</h2>
+                              <h2>Choose Your Company's Plan</h2>
                               <hr class="star-primary">
-                              <img src="http://i.stack.imgur.com/tM18j.gif" alt="alt text">
-                              <p>We're not quite ready for you yet, but please leave your email and we'll send you a nice note as soon as things are up and running!</p>
-                               <form name="sentMessage2" id="contactForm2" novalidate>
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                                        <label>Email Address</label>
-                                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                        <p class="help-block text-danger"></p>
-                                    </div>
+                              <h4>All paid plans come with a 30 day free trial!</h4>
+                              <div class="row">
+                                <div class="col-lg-3 well">
+                                  <h3>Seed Plan</h3>
+                                  <h4>1-19 Users</h4>
+                                  <hr class="star-light">
+                                  <h5>Free Forever!</h5>
+                                    <button type="button" class="btn btn-primary"><i class="fa fa-check-square"></i> <a href="#underConstructionModal" class="portfolio-link" data-toggle="modal">Select</a></button>
                                 </div>
-                                <br>
-                                <div id="success"></div>
-                                <div class="row">
-                                    <div class="form-group col-xs-12">
-                                        <button type="submit" class="btn btn-success btn-lg" onclick="getData()">Submit</button>
-                                    </div>
-                                </div>
-                              </form>
 
+                                <div class="col-lg-3 well">
+                                  <h3>Series A Plan</h3>
+                                  <h4>20-99 Users</h4>
+                                  <hr class="star-light">
+                                  <h5>$9.99/month</h5>
+                                  <button type="button" class="btn btn-primary"><i class="fa fa-check-square"></i> <a href="#underConstructionModal" class="portfolio-link" data-toggle="modal">Select</a></button>
+                                </div>
+
+                                <div class="col-lg-3 well">
+                                  <h3>Series B-D Plan</h3>
+                                  <h4>99-999 Users</h4>
+                                  <hr class="star-light">
+                                  <h5>$199/month</h5>
+                                  <button type="button" class="btn btn-primary"><i class="fa fa-check-square"></i> <a href="#underConstructionModal" class="portfolio-link" data-toggle="modal">Select</a></button>
+                                </div>
+                                <div class="col-lg-3 well">
+                                  <h3>Enterprise Plan</h3>
+                                  <h4>1000+ Users</h4>
+                                  <hr class="star-light">
+                                  <h5>Contact Us</h5>
+                                  <button type="button" class="btn btn-primary"><i class="fa fa-check-square"></i> <a href="#underConstructionModal" class="portfolio-link" data-toggle="modal">Select</a></button>
+                                </div>
+                              </div>  
+                              
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                          </div>
+                            </div> 
+                          
                       </div>
                   </div>
               </div>
@@ -368,25 +384,49 @@
                           <div class="modal-body">
                               <h2>Create Your Merchant Account</h2>
                               <hr class="star-primary">
+                              <p>Interested in learning how you can help busines travelers simplify their trips and join the <b>#nomorereciepts</b> revoluion?</p>
+                              <p>Send us your email and we'll get in touch to figure out how to help you get started!</p>
+                              <form id="mailing-list1" class="form-inline">
+                                <div class="form-group">
+                                  <label hidden for="emailAddress">Email</label>
+                                  <input type="email" name="emailAddress" class="form-control" id="emailAddress" placeholder="you@email.com">
+                                </div>
+                                <button type="submit" class="btn btn-success">Sign Me Up!</button>
+                                <label class="error-message"></label>
+                              </form>
+                              <br>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="underConstructionModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-content">
+              <div class="close-modal" data-dismiss="modal">
+                  <div class="lr">
+                      <div class="rl">
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2">
+                          <div class="modal-body">
+                              <h2>We Like Where You're Head's At!</h2>
+                              <hr class="star-primary">
                               <img src="http://i.stack.imgur.com/tM18j.gif" alt="alt text">
                               <p>We're not quite ready for you yet, but please leave your email and we'll send you a nice note as soon as things are up and running!</p>
-                               <form name="sentMessage2" id="contactForm2" novalidate>
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                                        <label>Email Address</label>
-                                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                        <p class="help-block text-danger"></p>
-                                    </div>
+                              <form id="mailing-list2" class="form-inline">
+                                <div class="form-group">
+                                  <label hidden for="emailAddress">Email</label>
+                                  <input type="email" name="emailAddress" class="form-control" id="emailAddress" placeholder="you@email.com">
                                 </div>
-                                <br>
-                                <div id="success"></div>
-                                <div class="row">
-                                    <div class="form-group col-xs-12">
-                                        <button type="submit" class="btn btn-success btn-lg" onclick="getData()">Submit</button>
-                                    </div>
-                                </div>
+                                <button type="submit" class="btn btn-success">Sign Me Up!</button>
+                                <label class="error-message"></label>
                               </form>
-
+                              <br>
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                           </div>
                   </div>

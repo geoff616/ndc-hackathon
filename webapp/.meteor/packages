@@ -24,3 +24,4 @@ accounts-ui
 iron:router
 mrt:bootstrap-3
 mrt:jquery-ui
+miro:mailchimp

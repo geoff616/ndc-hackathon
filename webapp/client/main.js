@@ -6,6 +6,70 @@ import '../common/router.js';
 
 var formSubmits = new Mongo.Collection('formSubmits');
 
+Template.Home.onRendered( function() {
+  var template = this;
+
+  $( "#mailing-list1" ).validate({
+    rules: {
+      emailAddress: {
+        email: true,
+        required : true
+      }
+    },
+    messages: {
+      emailAddress: {
+        email: "Please use a valid email address!",
+        required: "An email address is required."
+      }
+    },
+    errorPlacement: function( error, element ) {
+      $( ".error-message" ).text( error[0].innerText );
+    },
+    success: function( error ) {
+      $( ".error-message" ).text( error[0].innerText );
+    },
+    submitHandler: function() {
+      handleSubscriber({
+        email: template.find( "[name='emailAddress']" ).value,
+        action: 'subscribe'
+      });
+    }
+  });
+  // TODO: Make less gross --- dry
+  $( "#mailing-list2" ).validate({
+    rules: {
+      emailAddress: {
+        email: true,
+        required : true
+      }
+    },
+    messages: {
+      emailAddress: {
+        email: "Please use a valid email address!",
+        required: "An email address is required."
+      }
+    },
+    errorPlacement: function( error, element ) {
+      $( ".error-message" ).text( error[0].innerText );
+    },
+    success: function( error ) {
+      $( ".error-message" ).text( error[0].innerText );
+    },
+    submitHandler: function() {
+      handleSubscriber({
+        email: template.find( "[name='emailAddress']" ).value,
+        action: 'subscribe'
+      });
+    }
+  });
+});
+
+Template.Home.events({
+  'submit form': function( event ) {
+    event.preventDefault();
+  }
+});
+
 // Template.hello.onCreated(function helloOnCreated() {
 //   // counter starts at 0
 //   this.counter = new ReactiveVar(0);
