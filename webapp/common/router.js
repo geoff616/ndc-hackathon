@@ -31,6 +31,10 @@ Meteor.startup(() => {
     // render the Signup Template
     this.render('ComingSoon', {data: {}});
   });
+  Router.route('/admin/merchants', function () {
+    // render the Signup Template
+    this.render('Marketplace', {data: {}});
+  });
   // API ROUTES
   if (Meteor.isServer) {
     Router.route('/api/transaction', {where: 'server'})
